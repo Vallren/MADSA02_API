@@ -10,11 +10,11 @@
 
     <!--recycler view to display our data-->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idRVCourses"
+        android:id="@+id/idRVLocations"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <!--fab to add new courses-->
+    <!--fab to add new Locations-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/idFABAdd"
         android:layout_width="wrap_content"

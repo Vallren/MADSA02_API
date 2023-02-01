@@ -10,29 +10,29 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class CourseRVAdapter extends ListAdapter<CourseModal, CourseRVAdapter.ViewHolder> {
+public class LocationRVAdapter extends ListAdapter<LocationModal, LocationRVAdapter.ViewHolder> {
 
     // creating a variable for on item click listener.
     private OnItemClickListener listener;
 
     // creating a constructor class for our adapter class.
-    CourseRVAdapter() {
+    LocationRVAdapter() {
         super(DIFF_CALLBACK);
     }
 
     // creating a call back for item of recycler view.
-    private static final DiffUtil.ItemCallback<CourseModal> DIFF_CALLBACK = new DiffUtil.ItemCallback<CourseModal>() {
+    private static final DiffUtil.ItemCallback<LocationModal> DIFF_CALLBACK = new DiffUtil.ItemCallback<LocationModal>() {
         @Override
-        public boolean areItemsTheSame(CourseModal oldItem, CourseModal newItem) {
+        public boolean areItemsTheSame(LocationModal oldItem, LocationModal newItem) {
             return oldItem.getId() == newItem.getId();
         }
 
         @Override
-        public boolean areContentsTheSame(CourseModal oldItem, CourseModal newItem) {
-            // below line is to check the course name, description and course duration.
-            return oldItem.getCourseName().equals(newItem.getCourseName()) &&
-                    oldItem.getCourseDescription().equals(newItem.getCourseDescription()) &&
-                    oldItem.getCourseDuration().equals(newItem.getCourseDuration());
+        public boolean areContentsTheSame(LocationModal oldItem, LocationModal newItem) {
+            // below line is to check the Location name, description and Location duration.
+            return oldItem.getLocationName().equals(newItem.getLocationName()) &&
+                    oldItem.getLocationDescription().equals(newItem.getLocationDescription()) &&
+                    oldItem.getLocationDuration().equals(newItem.getLocationDuration());
         }
     };
 
@@ -42,7 +42,7 @@ public class CourseRVAdapter extends ListAdapter<CourseModal, CourseRVAdapter.Vi
         // below line is use to inflate our layout
         // file for each item of our recycler view.
         View item = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.course_rv_item, parent, false);
+                .inflate(R.layout.location_rv_item, parent, false);
         return new ViewHolder(item);
     }
 
@@ -50,27 +50,27 @@ public class CourseRVAdapter extends ListAdapter<CourseModal, CourseRVAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         // below line of code is use to set data to
         // each item of our recycler view.
-        CourseModal model = getCourseAt(position);
-        holder.courseNameTV.setText(model.getCourseName());
-        holder.courseDescTV.setText(model.getCourseDescription());
-        holder.courseDurationTV.setText(model.getCourseDuration());
+        LocationModal model = getLocationAt(position);
+        holder.LocationNameTV.setText(model.getLocationName());
+        holder.LocationDescTV.setText(model.getLocationDescription());
+        holder.LocationDurationTV.setText(model.getLocationDuration());
     }
 
-    // creating a method to get course modal for a specific position.
-    public CourseModal getCourseAt(int position) {
+    // creating a method to get Location modal for a specific position.
+    public LocationModal getLocationAt(int position) {
         return getItem(position);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         // view holder class to create a variable for each view.
-        TextView courseNameTV, courseDescTV, courseDurationTV;
+        TextView LocationNameTV, LocationDescTV, LocationDurationTV;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             // initializing each view of our recycler view.
-            courseNameTV = itemView.findViewById(R.id.idTVCourseName);
-            courseDescTV = itemView.findViewById(R.id.idTVCourseDescription);
-            courseDurationTV = itemView.findViewById(R.id.idTVCourseDuration);
+            LocationNameTV = itemView.findViewById(R.id.idTVLocationName);
+            LocationDescTV = itemView.findViewById(R.id.idTVLocationDescription);
+            LocationDurationTV = itemView.findViewById(R.id.idTVLocationDuration);
 
             // adding on click listener for each item of recycler view.
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -88,10 +88,11 @@ public class CourseRVAdapter extends ListAdapter<CourseModal, CourseRVAdapter.Vi
     }
 
     public interface OnItemClickListener {
-        void onItemClick(CourseModal model);
+        void onItemClick(LocationModal model);
     }
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
     }
+
 }
 

@@ -10,19 +10,19 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 // adding annotation for our database entities and db version.
-@Database(entities = {CourseModal.class}, version = 1)
-public abstract class CourseDatabase extends RoomDatabase {
+@Database(entities = {LocationModal.class}, version = 1)
+public abstract class LocationDatabase extends RoomDatabase {
 
     // below line is to create instance
     // for our database class.
-    private static CourseDatabase instance;
+    private static LocationDatabase instance;
 
     // below line is to create
     // abstract variable for dao.
     public abstract Dao Dao();
 
     // on below line we are getting instance for our database.
-    public static synchronized CourseDatabase getInstance(Context context) {
+    public static synchronized LocationDatabase getInstance(Context context) {
         // below line is to check if
         // the instance is null or not.
         if (instance == null) {
@@ -33,7 +33,7 @@ public abstract class CourseDatabase extends RoomDatabase {
                     // we are creating a database builder and passing
                     // our database class with our database name.
                     Room.databaseBuilder(context.getApplicationContext(),
-                                    CourseDatabase.class, "course_database")
+                                    LocationDatabase.class, "Location_database")
                             // below line is use to add fall back to
                             // destructive migration to our database.
                             .fallbackToDestructiveMigration()
@@ -62,7 +62,7 @@ public abstract class CourseDatabase extends RoomDatabase {
 
     // we are creating an async task class to perform task in background.
     private static class PopulateDbAsyncTask extends AsyncTask<Void, Void, Void> {
-        PopulateDbAsyncTask(CourseDatabase instance) {
+        PopulateDbAsyncTask(LocationDatabase instance) {
             Dao dao = instance.Dao();
         }
         @Override

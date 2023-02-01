@@ -9,15 +9,15 @@
     app:cardCornerRadius="8dp">
 
     <LinearLayout
-        android:id="@+id/idLLCourse"
+        android:id="@+id/idLLLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:orientation="vertical">
 
-        <!--text view for our course name-->
+        <!--text view for our Location name-->
         <TextView
-            android:id="@+id/idTVCourseName"
+            android:id="@+id/idTVLocationName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
@@ -25,9 +25,9 @@
             android:textColor="@color/black"
             android:textSize="15sp" />
 
-        <!--text view for our course duration-->
+        <!--text view for our Location duration-->
         <TextView
-            android:id="@+id/idTVCourseDuration"
+            android:id="@+id/idTVLocationDuration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
@@ -35,9 +35,9 @@
             android:textColor="@color/black"
             android:textSize="15sp" />
 
-        <!--text view for our course description-->
+        <!--text view for our Location description-->
         <TextView
-            android:id="@+id/idTVCourseDescription"
+            android:id="@+id/idTVLocationDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"

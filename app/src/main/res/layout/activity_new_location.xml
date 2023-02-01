@@ -5,27 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".NewCourseActivity">
+    tools:context=".NewLocationActivity">
 
-    <!--edit text for our course name-->
+    <!--edit text for our Location name-->
     <EditText
-        android:id="@+id/idEdtCourseName"
+        android:id="@+id/idEdtLocationName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Enter Location Name" />
 
-    <!--edit text for our course description-->
+    <!--edit text for our Location description-->
     <EditText
-        android:id="@+id/idEdtCourseDescription"
+        android:id="@+id/idEdtLocationDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Location Latitude" />
 
-    <!--edit text for course description-->
+    <!--edit text for Location description-->
     <EditText
-        android:id="@+id/idEdtCourseDuration"
+        android:id="@+id/idEdtLocationDuration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -33,7 +33,7 @@
 
     <!--button for saving data to room database-->
     <Button
-        android:id="@+id/idBtnSaveCourse"
+        android:id="@+id/idBtnSaveLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
